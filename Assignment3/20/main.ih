@@ -1,0 +1,7 @@
+#include <string>
+
+size_t countChars();
+size_t countWords();
+size_t countLines();
+
+void wc(int argc, char *argv[]);
