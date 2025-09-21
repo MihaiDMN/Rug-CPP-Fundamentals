@@ -1,5 +1,5 @@
 #include <iostream>
-#include "main.h"
+#include "main.ih"
 
 using namespace std;
 int main(int argc, char *argv[])

@@ -2,33 +2,6 @@
 #include <iostream>
 
 using namespace std;
-size_t countChars()
-{
-    size_t count = 0;
-    char character;
-    while (cin.get(character))
-        ++count;
-    return count;
-}
-
-size_t countWords()
-{
-    size_t count = 0;
-    string word;
-    while (cin >> word)
-        ++count;
-    return count;
-}
-
-size_t countLines()
-{
-    size_t count = 0;
-    string line;
-    while (getline(cin, line))
-        ++count;
-    return count;
-}
-
 void wc(int argc, char *argv[])
 {
     if (argc != 2)
