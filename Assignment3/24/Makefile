@@ -1,6 +1,6 @@
 # Compiler and flags
 CXX = g++
-CXXFLAGS = -O2 -pg -Wall -std=c++17
+CXXFLAGS = -O1 -pg -Wall -std=c++17
 
 # Executable name
 TARGET = main

@@ -1,5 +1,4 @@
-#include "callvalue.h"
-#include "fun.h"
+#include "main.h"
 using namespace std;
 void callValue(string const &prog)
 {

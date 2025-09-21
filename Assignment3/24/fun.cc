@@ -1,4 +1,4 @@
-#include "fun.h"
+#include "main.h"
 
 using namespace std;
 

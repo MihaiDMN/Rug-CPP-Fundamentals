@@ -1,5 +1,4 @@
-#include "callref.h"
-#include "fun2.h"
+#include "main.h"
 using namespace std;
 void callRef(string const &prog)
 {
