@@ -2,11 +2,10 @@
 #include <string>
 
 using namespace std;
-int sum(int argc, char *argv[], int total)
+double sum(int argc, char *argv[], double total)
 {
-    int result = total;
+    double result = total;
     for (int i = 1; i != argc; ++i)
-        result += stoi(argv[i]);
+        result += stod(argv[i]);
     return result;
 }
-

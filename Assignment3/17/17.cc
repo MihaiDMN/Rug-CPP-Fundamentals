@@ -18,5 +18,5 @@ int main(int argc, char *argv[])
     if (hasdot)
         cout << sum(argc, argv, 0.0) << "\n";
     else
-        cout << sum(argc, argv, 0.0) << "\n";
+        cout << sum(argc, argv, 0) << "\n";
 }
