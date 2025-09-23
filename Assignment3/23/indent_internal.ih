@@ -1,0 +1,13 @@
+#ifndef INDENT_INTERNAL_H
+#define INDENT_INTERNAL_H
+
+static size_t indentation_depth = 0;
+static size_t indentation_step_size = 4;
+static bool can_change_step_size = true;
+
+void disable_step_size_change()
+{
+    can_change_step_size = false;
+}
+
+#endif

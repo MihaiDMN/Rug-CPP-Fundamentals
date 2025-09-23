@@ -1,0 +1,30 @@
+This exercise asks us to describe what `encapsulation' and `data hiding' means, and why these concepts are important when designing classes.
+
+Encapsulation means to bundle together some data which in the case of a class they are the member variables and the operations which are the member functions that work with/on that data into a single unit, in our case the class.
+
+Data hiding means that you restrict direct access to the internal state of a class, so member variables are private and the only controlled access is through public member functions.
+
+These concepts are important when designing a class because they introduce safety so the object cannot be changed into an invalid state. They can also make it easier to understand how the class should be used and it can also help with code maintainability.
+
+//bankaccount.h
+#ifndef BANKACCOUNT_H
+#define BANKACCOUNT_H
+
+#include <string>
+
+class BankAccount
+{
+	std::string d_name; // the name of the bank account's owner
+	double d_balance; // the balance of the account
+	
+	public:
+		BankAccount(std::string const &name, double initialBalance);
+		
+		void deposit(double amount);
+		bool withdraw(double amount);
+		double balance() const;
+		
+};
+#endif
+
+The implementation is irrelevant because the question asks us about the concepts of encapsulation and data hiding. The interface demonstrates encapsulation by bundling data and functions. Data hiding is also demonstrated as we have private data and a public interface. Implementing the function to deposit for example would not help demonstrate these two concepts as we would just add money.
