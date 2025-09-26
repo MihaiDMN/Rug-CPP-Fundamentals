@@ -1,6 +1,4 @@
 #include "person.ih"
-#include <iostream>
-#include <sstream>
 using namespace std;
 
 Person::Person()
@@ -63,7 +61,7 @@ size_t Person::mass() const
 
 void Person::insert(std::ostream &out) const
 {
-    out << d_name << ", " << d_address << ","
+    out << d_name << ", " << d_address << ", "
          << d_phone << ", " << d_mass << "\n";
 }
 
@@ -72,17 +70,25 @@ void Person::extract(std::istream &in)
     string line;
     if (getline(in, line))
     {
-        istringstream info(line);
-        string name, address, phone, mass;
-        getline(info, name, ',');
-        getline(info, address, ',');
-        getline(info, phone, ',');
-        getline(info, mass);
-        d_name = name;
-        d_address = address;
+        size_t pos1 = 0;
+        size_t pos2 = 0;
+        
+        pos2 = line.find(',', pos1);
+        d_name = line.substr(pos1, pos2 - pos1);
+        
+        pos1 = pos2 + 1;
+        pos2 = line.find(',', pos1);
+        d_address = line.substr(pos1, pos2 - pos1);
+
+        pos1 = pos2 + 1;
+        pos2 = line.find(',', pos1);
+        string phone = line.substr(pos1, pos2 - pos1);
         setPhone(phone);
-        size_t massValue = stoul(mass);
-        d_mass = massValue;
+        
+        pos1 = pos2 + 1;
+        string massStr = line.substr(pos1);
+        d_mass = stoul(massStr);
+
     }
 }
 

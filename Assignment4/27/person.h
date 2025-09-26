@@ -2,7 +2,7 @@
 #define INCLUDED_PERSON_H
 
 #include <string>
-#include <iosfwd>
+#include <iostream>
 
 class Person
 {
