@@ -1,0 +1,17 @@
+? 56 + 90
+146
+? 43 - 73
+-30
+? 8 * 8
+64
+? 16 / 4
+4
+? 9 % 4
+1
+? 5 / 0
+Cannot divide by 0
+? 8 % -3
+The numbers must be non-zero integers for modulo
+? 2 $ 3
+Not a valid expression
+?

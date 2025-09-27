@@ -1,0 +1,5 @@
+Plain compilation of the program: 01m:06s.
+Compilation of the program using precompiled headers
+
+Compilation of the program using a single precompiled header: 00m:14s.
+the size of the SPCH (in MB): 55.8MB
