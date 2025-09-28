@@ -3,31 +3,23 @@
 #include <string>
 
 using namespace std;
-int main()
+
+int main(int argc, char *argv[])
 {
-    string line = "bannaca cherry apple";
-    size_t spaceCount = 0;
-    for (char character : line)
+    string input = "banana cherry apple";
+
+    size_t count = 1;
+    for (char character : input)
     {
         if (character == ' ')
-            ++spaceCount;
+            ++count;
     }
-    string words[spaceCount];
-    size_t pos1 = 0;
-    size_t pos2 = 0;
-    for (size_t index = 0; index != spaceCount; ++index)
-    {
-        pos2 = line.find(' ', pos1);
-        string word = line.substr(pos1, pos2 - pos1);
-        words[index] = word;
-        cout << words[index] << " ";
-        pos1 = pos2 + 1;
-        
-    }
-    words[spaceCount - 1] = line.substr(pos1, line.size() - 1);
-    for (size_t index = 0; index != spaceCount; ++index)
-        cout << words[index];
-    cout << "Before " << line << "\n";
-    quicksort(line, 0, line.length());
-    cout << "After " << line << "\n";
+    string words[count];
+    separateWords(count, words, input);
+    quicksort(words, 0, count);
+    // v This outputs each word in the string, remove this loop and comment and tie it into the quicksort instead
+    for (size_t index = 0; index != count; ++index)
+        cout << words[index] << '\n';
+    
+
 }
