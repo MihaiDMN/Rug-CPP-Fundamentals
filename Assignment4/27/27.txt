@@ -1,0 +1,1 @@
+This exercise asks us to use the previously implemented Person class and define an array of 5 Person objects. We also have to implent a function which reads all of the Persons data from the input stream, and a function writing the data of all the Persons data to the output stream.

@@ -16,14 +16,17 @@ Person::Person(std::string const &name, std::string const &address,
 
 void Person::setName(string const &name)
 {
+    // set the name of the person
     d_name = name;
 }
 void Person::setAddress(string const &address)
-{
+{   
+    // set the address of the person
     d_address = address;
 }
 void Person::setPhone(string const &phone)
 {
+    // set the phone number of the person, but first check if it is valid
     if (phone.empty())
         d_phone = " - not available -";
     else if (isDigits("0123456789", phone))
@@ -36,6 +39,7 @@ void Person::setPhone(string const &phone)
 }
 void Person::setMass(size_t mass)
 {
+    // set the mass of the person
     d_mass = mass;
 }
 
@@ -60,19 +64,21 @@ size_t Person::mass() const
 }
 
 void Person::insert(std::ostream &out) const
-{
+{   
+    // insert the information of a person into the outstream
     out << d_name << ", " << d_address << ", "
          << d_phone << ", " << d_mass << "\n";
 }
 
 void Person::extract(std::istream &in)
 {
+    // take in some input from the instream and make it into a person class
     string line;
     if (getline(in, line))
     {
         size_t pos1 = 0;
         size_t pos2 = 0;
-        
+        //parse through the input, spaced by ',' to find the required arguments
         pos2 = line.find(',', pos1);
         d_name = line.substr(pos1, pos2 - pos1);
         
@@ -94,5 +100,6 @@ void Person::extract(std::istream &in)
 
 bool Person::isDigits(char const *characters, string const &object)
 {
+    // check to see if the phone number is made out of digits
     return object.find_first_not_of(characters) == string::npos;
 }

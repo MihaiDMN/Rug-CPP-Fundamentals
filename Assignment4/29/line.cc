@@ -3,6 +3,7 @@ using namespace std;
 
 bool Line::getLine()
 {
+    // checks if there are no whitespace characters and returns true if that is the case
     if (!getline(cin, d_line))
         return false;
     
@@ -19,6 +20,7 @@ bool Line::getLine()
 
 string Line::next()
 {
+    //returns the next substring of non-ws chars from getLine
     if (d_pos == string::npos)
         return "";
 

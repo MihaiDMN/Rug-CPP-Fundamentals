@@ -1,0 +1,1 @@
+This exercise asks us to implement the Parser class, which uses the facilities of the class Line. The class is meant to read the next input line, extract substrings and try to convert them to numbers, report if a substring is a valid nuber, track whether the last number was integral and return the next substring.

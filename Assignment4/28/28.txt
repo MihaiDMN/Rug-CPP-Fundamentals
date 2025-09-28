@@ -1,0 +1,1 @@
+This exercise asks us to implement the Line class which has two memebers: bool getLine() which returns true if the line read from cin contains non whitespace characters, and the member std::string next() which returns the next substring from the line retreived by getLine() consiting of non whitespace characters.
