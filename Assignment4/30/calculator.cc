@@ -7,7 +7,8 @@ void Calculator::run()
     string line;
     cout << "? ";
     while (getline(cin, line))
-    {   
+    {
+        // parse through the input line and separate the left and right values and the operator   
         if (line.empty())
             break;
         size_t pos1 = 0;
@@ -42,12 +43,14 @@ void Calculator::run()
 void Calculator::evaluate(double left, char op, double right,
                           bool leftInt, bool rightInt)
 {
+    // executes the desired expression
     if (op == '+')
         cout << left + right << "\n";
     if (op == '-')
         cout << left - right << "\n";
     if (op == '*')
         cout << left * right << "\n";
+    // check if the right value is not 0 before division
     if (op == '/')
         {
             if (fabs(right) < 1e-8)
@@ -55,6 +58,7 @@ void Calculator::evaluate(double left, char op, double right,
             else
                 cout << left / right << "\n";
         }
+    // check that left and right are positive non-zero integers
     if (op == '%')
         {
             if (!leftInt || !rightInt)
@@ -66,6 +70,7 @@ void Calculator::evaluate(double left, char op, double right,
 }
 bool Calculator::expression(char op)
 {
+    // checks if the expression is valid
     if (getOperator(op))
         return true;
     else
@@ -74,11 +79,13 @@ bool Calculator::expression(char op)
 
 void Calculator::number(double *dest, bool *isInt)
 {
+    // checks if the number is a positive non-zero integer
     *isInt = *dest > 1e-8;
 }
 
 bool Calculator::getOperator(char &op)
 {
+    // checks if the operator is valid
     switch (op)
     {
         case '+':

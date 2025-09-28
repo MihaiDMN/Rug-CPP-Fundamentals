@@ -1,3 +1,5 @@
+This exercise asks us to use the previously implemented Calculator class and provide an example of it's implementation including how it reacts to invalid inputs.
+
 ? 56 + 90
 146
 ? 43 - 73

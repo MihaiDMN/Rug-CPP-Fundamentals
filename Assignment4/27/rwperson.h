@@ -5,4 +5,5 @@
 
 void readPersons(Person array[], size_t size);
 void writePersons(const Person array[], size_t size);
+
 #endif
