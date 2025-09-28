@@ -1,5 +1,24 @@
-Plain compilation of the program: 01m:06s.
-Compilation of the program using precompiled headers
+This exercise asks us to explore the effects of precompiled headers on the compilation time and resource usage on a large C++ project.
 
+Plain compilation of the program: 01m:06s.
+Compilation of the program using precompiled headers: 00m:19s
+The file sizes are:
+49M /precompile/tmp/gch/arg.ih.gch
+51M /precompile/tmp/gch/datetime.ih.gch
+32M /precompile/tmp/gch/exception.ih.gch
+26M /precompile/tmp/gch/iuo.ih.gch
+44M /precompile/tmp/gch/keys.ih.gch
+41M /precompile/tmp/gch/main.ih.gch
+37M /precompile/tmp/gch/mbuf.ih.gch
+39M /precompile/tmp/gch/mstream.ih.gch
+35M /precompile/tmp/gch/string.ih.gch
+45M /precompile/tmp/gch/student.ih.gch
+52M /precompile/tmp/gch/students.ih.gch
+Total = 446M
 Compilation of the program using a single precompiled header: 00m:14s.
-the size of the SPCH (in MB): 55.8MB
+the size of the SPCH (in MB): 56M
+Compilation time of the program using a SPCH and using all CPUs of your computer: 00m:02s.
+Remove the compilation results of the previous item and redo the compilation: 00m:02s.
+
+Conclusions:
+Precompiled headers drastically reduce compilation time 1:06 -> 0:19. Using a SPCH reduced it even more to 0:14, also a SPCH is more space effictient than multiple PCHs. SPCH + all CPUs + ccache provide a compilation time of 0:02, which is way faster than plain compilation and even when using a SPCH. In conclusion precompiled headers are very effective in large C++ projects. 
