@@ -1,0 +1,1 @@
+This exercise asks us to design a class CopyCat that makes deep copies of command-line arguments and environment variables. The goal is to give the class it's own data rather than directly using the global or passed-in pointers.

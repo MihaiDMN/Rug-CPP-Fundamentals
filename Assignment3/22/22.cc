@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <vector>
+#include <utility>
 using namespace std;
 
 struct Subject
@@ -15,9 +15,9 @@ int main(int argc, char *argv[])
     
     if (argc == 3)
         srand(stoi(argv[2]));
-    
-    vector<Subject> queue;
-    
+
+    Subject queue[n];
+
     for (int i = 0; i != n; ++i)
     {
         int r = rand();
@@ -28,22 +28,20 @@ int main(int argc, char *argv[])
             color = "blue";
         Subject s = {color, i};
         
-        if (queue.empty())
-            queue.push_back(s);
+        if (queue[0].eyes.empty())
+            queue[0] = s;
         else
         {
             if (s.eyes == "brown")
             {
-                int j = 0;
-                while (j < queue.size() && queue[j].eyes == "brown")
+                size_t j = 0;
+                while (j < i && queue[j].eyes == "brown")
                     ++j;
-                queue.insert(queue.begin() + j, s);
+                swap(queue[j], queue[i]); 
             }
-            else
-                queue.push_back(s);
         }
     }
-    for (int i = 0; i != queue.size(); ++i)
+    for (size_t i = 0; i != n; ++i)
         cout << i + 1 << ": " << queue[i].eyes << " (" << queue[i].order <<")\n";
 
 }

@@ -1,0 +1,12 @@
+This exercise asks us to answer some questions regarding concepts of the poiter.
+1. Differences between pointer variables and arrays.
+An array is a fixed block of contiguous memory with a constant base address.
+A pointer variable is a variable that can store the address of any object and can be reassigned.
+2. Differences between pointer variables and reference variables.
+A pointer specifically holds the memory address of an object and can be made to point to different objects.
+A reference is an alias to an existing object which cannot be changed to reference a different object once initialized.
+3. How to access element [3][2].
+a. for the variable `int array[20][30]': the element is at offset 3 * 30+ 2 from the base address (array[0][0]).
+b. for the variable `int *pointer[20]': each pointer[i] is a pointer to memory. Element [3][2], means to go to the 4th pointer in the array and mobe 2 elements further in the memory.
+4. Pointer arithmetic meaning:
+It means that performing addition/subtraction on pointers relative to the size of the type they point to. So p + 1 advances the pointer p by one element in memory.
