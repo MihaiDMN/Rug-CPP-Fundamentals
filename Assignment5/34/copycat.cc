@@ -21,6 +21,7 @@ CopyCat::CopyCat(char **data)
 
 char *CopyCat::ntbsCopy(char const *src)
 {
+    // allocates a new char array and copies one NTBS into it
     size_t len = 0;
     while (src[len] != '\0')
         ++len;
@@ -33,6 +34,7 @@ char *CopyCat::ntbsCopy(char const *src)
 
 size_t CopyCat::nElements(char **data)
 {
+    // counts how many strings are in the given char ** array
     size_t count = 0;
     while (data[count] != nullptr)
         ++count;
@@ -41,6 +43,7 @@ size_t CopyCat::nElements(char **data)
 
 char **CopyCat::duplicate(char **data)
 {
+    // allocates a new char array, copies each string using ntbsCopy
     size_t number = nElements(data);
     char **result = new char*[number + 1];
     for (size_t index = 0; index != number; ++index)
