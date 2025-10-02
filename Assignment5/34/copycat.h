@@ -1,5 +1,5 @@
-#ifndef INCLUDED_COPYCAT_
-#define INCLUDED_COPYCAT_
+#ifndef INCLUDED_COPYCAT_H
+#define INCLUDED_COPYCAT_H
 
 #include <cstddef>
 
