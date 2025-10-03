@@ -1,0 +1,39 @@
+This exercise asks us to complete the table with the pointer notation of a definition and also describe what the rewritten statement does.
+----------------------------------------------------------------------------
+  definition:         rewrite: 
+----------------------------------------------------------------------------
+  int x[8];           x[2] = x[3];
+
+pointer notation: *(x + 2) = *(x + 3);
+       semantics: Assign the value of the third elemnt beyond x to the second.
+----------------------------------------------------------------------------
+  char *argv[8];      cout << argv[2];
+
+pointer notation: cout << *(argv + 2);
+       semantics: Print the char pointer stored at position 2 of argv.
+----------------------------------------------------------------------------
+  int x[8];           &x[10] - &x[3];
+ 
+pointer notation: (x + 10) - (x + 7);
+       semantics: Compute the distance between x[10] and x[3].
+----------------------------------------------------------------------------
+  main's argv;        argv++[0];
+
+pointer notation: *(argv++);
+       semantics: Use the current first elemnt of argv and then advance argv to the next argument pointer.
+----------------------------------------------------------------------------
+  main's argv;        argv[0]++;
+
+pointer notation:(*argv)++;
+       semantics: Increment the pointer stored in argv[0] to point to the next character of the first argument string.
+----------------------------------------------------------------------------
+  main's argv;        ++argv[0];
+
+pointer notation: ++(*argv);
+       semantics: Same as the one above.
+----------------------------------------------------------------------------
+  main's argv;        ++argv[0][2];
+
+pointer notation: ++(*(*argv + 2));
+       semantics: Increment the character at offset 2 of the first argument string.
+----------------------------------------------------------------------------
