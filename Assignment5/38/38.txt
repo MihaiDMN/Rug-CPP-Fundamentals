@@ -1,0 +1,24 @@
+This exercise asks us to find the main flaw in its design, and suggest a fix.
+The main flaw is with the order of initialization of global and static objects. This means that in some cases depending on the compilation order the Finder s_finder, might be initialized after phonebook's constructor runs. So when the constructor tries to access PhoneBook::s_finder, it could be using an uninitialized object. In order to fix it we need to guarantee that Finder is initialized before it's used.
+    class PhoneBook
+    {
+        public:
+            PhoneBook();                            // initializes the phone book
+    
+                            // users may insert/update name/phone pairs
+            void insert(std::string const &name, std::string const &phone);
+    
+                            // users can retrieve name's phone nr. returns 0 if
+                            // 'name' is not in s_finder
+            std::string const *get(std::string const &name) const;
+        private:
+            static Finder &finder(); // returns reference to one Finder
+    };
+
+And we can implement it like:
+    #include "phonebook.h"
+    Finder &PhoneBook::finder()
+    {
+        static Finder s_finder;
+        return s_finder;
+    }

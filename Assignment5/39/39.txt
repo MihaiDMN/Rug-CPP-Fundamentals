@@ -1,0 +1,48 @@
+This exercise asks us to compile a library with a basic class and test linking with main.o. Then we modify the library to add new members to show how the program breaks. The task is to convert the class to use Pimpl. 
+g++ -c data/read.cc -o read.o
+g++ -c data/display.cc -o display.o
+ar cr libdata.a read.o display.o
+g++ -c main.cc -o main.o
+g++ -o main main.o -L. -ldata
+./main < data.in
+Object 1: value is: 1
+Object 2: value is: 2
+Object 3: value is: 3
+Object 4: value is: 4
+g++ -c data/read.cc -o read.o
+g++ -c data/display.cc -o display.o
+ar cr libdata.a read.o display.o
+g++ -o main main.o -L. -ldata
+./main < data.in
+Segmentation fault (core dumped)
+
+
+g++ -Wall -Wextra -std=c++17 -Idata -c main.cc -o main.o
+g++ -Wall -Wextra -std=c++17 -Idata -c data/data.cc -o data/data.o
+g++ -Wall -Wextra -std=c++17 -Idata -c data/read.cc -o data/read.o
+g++ -Wall -Wextra -std=c++17 -Idata -c data/display.cc -o data/display.o
+g++ -Wall -Wextra -std=c++17 -Idata -c data/readimp.cc -o data/readimp.o
+g++ -Wall -Wextra -std=c++17 -Idata -c data/displayimp.cc -o data/displayimp.o
+ar rcs libdata.a data/data.o data/read.o data/display.o data/readimp.o data/displayimp.o
+g++ -Wall -Wextra -std=c++17 -Idata main.o -L. -ldata -o main
+./main < data.in
+Object 1: value is: 1
+Object 2: value is: 2
+Object 3: value is: 3
+Object 4: value is: 4
+gedit data/readimp.cc
+gedit data/dataimp.h
+
+
+g++ -Wall -Wextra -std=c++17 -Idata -c data/data.cc -o data/data.o
+g++ -Wall -Wextra -std=c++17 -Idata -c data/read.cc -o data/read.o
+g++ -Wall -Wextra -std=c++17 -Idata -c data/display.cc -o data/display.o
+g++ -Wall -Wextra -std=c++17 -Idata -c data/readimp.cc -o data/readimp.o
+g++ -Wall -Wextra -std=c++17 -Idata -c data/displayimp.cc -o data/displayimp.o
+ar rcs libdata.a data/data.o data/read.o data/display.o data/readimp.o data/displayimp.o
+g++ -Wall -Wextra -std=c++17 -Idata main.o -L. -ldata -o main
+./main < data.in
+Object 1: value is: 1
+Object 2: value is: 2
+Object 3: value is: 3
+Object 4: value is: 4

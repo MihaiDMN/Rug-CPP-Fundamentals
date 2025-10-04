@@ -1,0 +1,9 @@
+This exercise asks us some questions about Pimpl in order to deepen our understanding of why Pimpl prevents ABI breakages.
+Why the program breaks after creating the new library in step 2 of the previous exercise?
+By adding a new member d_text in the library libdata.a without recompiling main.o the ABI changed: so the size of the Data class and the members changed. main.o still expected the old layout so when it tries to acces d_value or call member functions we would get a segmentation fault.
+
+Why doesn't the program break anymore when using a pointer to the implementation?
+Data itself now only contains a pointer to the actual implementation. So the size and layout of Data never changes, no matter what we add inside DataImpl. The compiler and linker for main.o still sees the same layout for Data.
+
+How can these additional data members be added to your class without breaking the ABI? 
+We can introduce a private pointer to a struct, then move all of the current members of the class into that struct. Then all member functions will forward calls to d_impl. This way the public class layout does not change.
