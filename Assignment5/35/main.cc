@@ -1,6 +1,5 @@
 #include <iostream>
 #include "charcount.h"
-#include "showchar.h"
 
 using namespace std;
 int main()

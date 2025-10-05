@@ -28,4 +28,5 @@ class CharCount
         void locate(unsigned char c); // find or insert char
 };
 
+void showChar(unsigned char c);
 #endif
