@@ -2,7 +2,6 @@
 #define INCLUDED_LINE_H
 
 #include <string>
-#include <iostream>
 
 class Line
 {
