@@ -2,23 +2,6 @@
 #include "copycat.ih"
 
 extern char **environ;
-
-CopyCat::CopyCat(size_t argc, char **argv)
-:
-    d_size(argc),
-    d_data(new char*[argc + 1])
-{
-    for (size_t index = 0; index != argc; ++index)
-        d_data[index] = ntbsCopy(argv[index]);
-    d_data[argc] = nullptr;
-}
-
-CopyCat::CopyCat(char **data)
-:
-    d_size{nElements(data)},
-    d_data{duplicate(data)}
-{}
-
 char **CopyCat::duplicate(char **data)
 {
     // allocates a new char array, copies each string using ntbsCopy
