@@ -1,0 +1,20 @@
+This exercise asks us to look at the class Strings, and look for a crucial defect in code.
+The main problem of the class Strings is that there is no destructor, so every Strings object leaks memory.
+
+In String's interface two at members are declared.
+Why?
+One is a const member function and the other one isn't so the class can behave correctly in both read only and modifiable contexts. So the const version doesn't let us modify the string. The non const version does allow us to modify it.
+
+Which one is used in the abovementioned main function?
+Strings is not constants here, but at() is called in a read only expression, so the compiler picks the const function.
+
+Provide a small (!) example showing a situation where the other at member is used.
+Let's make every character on the first line uppercase. By changing the characters the compiler will use the non const version of the at inside the for loop.
+int main()
+{
+    Strings strings{ cin };
+    for(size_t idx = 0; i != strings.at(0).length(); ++idx)
+        strings.at(0)[i] = toupper(strings.at(0)[i]);
+    cout << strings.at(0) << "\n";
+}
+
