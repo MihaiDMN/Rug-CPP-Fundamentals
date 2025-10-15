@@ -1,0 +1,11 @@
+This question asks us to understand how checking a stream's state affects performance when output is disabled.
+With if statement
+real    0m0.071s
+user    0m0.071s
+sys     0m0.000s
+
+Without if statement
+real    0m2.116s
+user    0m1.968s
+sys     0m0.004s
+As we can see there is a significant time difference between using the if statement and not using it. The reason why when using the if statement we are having a shorter time is because when the failbit is set, out.good() returns false, so the body of the if is never executed. In the version without the if, every call still constructs a stream insertion expression even though the failbit is set and nothing is being displayed on screen. A general rule of thumb that we can make up from this is that when output is disabled, check out.good() to avoid the repeated stream operators from being constructed, especially when performance is important.

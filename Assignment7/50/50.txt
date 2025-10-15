@@ -1,0 +1,5 @@
+This exercise asks us to learn to open files to read/write.
+The reason why out1 is created is because ofstream is the output file stream, so it opens the file in output mode, so it creates the file if it doesn't exist, clears it and writes to it.
+Fstream is a general file stream meaning it can either be input and/or output, but it does not assume a role by itself, you need to specify it. The default mode is open for both reading and writing. However when we want to open a file and the file does not exist which is the case for out2 the open fails so writing to it does nothing.
+To fix it we can set out2 in output modes so the file gets created if it doesn't exist.
+fstream out2{ "/tmp/out2", ios::out };
