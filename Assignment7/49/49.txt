@@ -1,4 +1,4 @@
-This question asks us to understand how checking a stream's state affects performance when output is disabled.
+This question asks me to understand how checking a stream's state affects performance when output is disabled.
 With if statement
 real    0m0.071s
 user    0m0.071s

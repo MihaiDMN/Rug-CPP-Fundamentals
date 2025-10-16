@@ -1,0 +1,1 @@
+This exercise asked me to write a program that reads a file containing student information and converts all email addresses to lowercase.

@@ -1,0 +1,7 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+
+using namespace std;
+string lowercase(const string &str);
+void convert(const string &filename);

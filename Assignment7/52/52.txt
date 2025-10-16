@@ -1,0 +1,1 @@
+This exercise asked me to define a custom manipulator named now that outputs the current date and time in the same format as asctime but without the trailing newline.
