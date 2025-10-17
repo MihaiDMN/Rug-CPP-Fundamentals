@@ -1,0 +1,1 @@
+This exercise asks me to design and implement a program that performs search and replace operations on a text file. The program uses a class called Fch which takes a filename as argument, opens it and allows the user to replace occurrences of a target string with another string. The modified file content is then written to the standard output.  
