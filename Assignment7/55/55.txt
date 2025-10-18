@@ -1,0 +1,18 @@
+This exercise asks me to write a program that safely edits a file by using a file lock to prevent multiple users from modifying at the same time. To do that I need to create a Lock class that opens a lock file and releases the lock.
+
+The library is created and linked with the following commands:
+g++ -std=c++20 -Wall -Wextra -O2 -c main.cc
+g++ -std=c++20 -Wall -Wextra -O2   -c -o utility/lock1.o utility/lock1.cc
+g++ -std=c++20 -Wall -Wextra -O2   -c -o utility/lock2.o utility/lock2.cc
+g++ -std=c++20 -Wall -Wextra -O2   -c -o utility/lockdestructor.o utility/lockdestructor.cc
+g++ -std=c++20 -Wall -Wextra -O2   -c -o utility/valid.o utility/valid.cc
+g++ -std=c++20 -Wall -Wextra -O2   -c -o utility/lockpath.o utility/lockpath.cc
+g++ -std=c++20 -Wall -Wextra -O2   -c -o utility/openlockfile.o utility/openlockfile.cc
+ar rcs utility/libmdutility.a utility/lock1.o utility/lock2.o utility/lockdestructor.o utility/valid.o utility/lockpath.o utility/openlockfile.o
+g++ -std=c++20 -Wall -Wextra -O2 -o main main.o utility/libmdutility.a
+
+The directory for the development of the library is utility.
+/55$ ls
+Makefile  data.txt  data.txt.lck  main.cc  utility
+/55$ ls utility
+lock.h  lock1.cc  lock2.cc  lockdestructor.cc  lockpath.cc  openlockfile.cc  valid.cc
