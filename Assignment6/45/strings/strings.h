@@ -43,7 +43,8 @@ class Strings
         void enlarge();
         void destroy();
         std::string *rawStrings(size_t n);
-
+        
+        std::string *newStorage(size_t newCapacity);
         static size_t count(char **environLike);   // # elements in env.like
 };
 

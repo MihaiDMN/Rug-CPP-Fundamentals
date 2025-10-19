@@ -20,6 +20,8 @@ class Strings
         Strings(char **environLike);
         Strings(std::istream &in);
         ~Strings();
+        Strings(const Strings &other);
+        Strings &operator=(const Strings &other);
 
         void swap(Strings &other);              
 

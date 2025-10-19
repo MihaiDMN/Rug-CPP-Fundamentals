@@ -1,5 +1,5 @@
-main: main.o strings1.o strings2.o strings3.o strings4.o enlarge.o reserve.o stringsdestructor.o add.o fill.o rawpointers.o resize.o swap.o count.o release.o safeat.o destroy.o
-	g++ -o main main.o strings1.o strings2.o strings3.o strings4.o enlarge.o reserve.o stringsdestructor.o add.o fill.o rawpointers.o resize.o swap.o count.o release.o safeat.o destroy.o
+main: main.o strings1.o strings2.o strings3.o strings4.o enlarge.o reserve.o stringsdestructor.o add.o fill.o rawpointers.o resize.o swap.o count.o release.o safeat.o destroy.o newstorage.o
+	g++ -o main main.o strings1.o strings2.o strings3.o strings4.o enlarge.o reserve.o stringsdestructor.o add.o fill.o rawpointers.o resize.o swap.o count.o release.o safeat.o destroy.o newstorage.o
 
 destroy.o: destroy.cc strings.h
 	g++ -c destroy.cc
@@ -36,6 +36,9 @@ reserve.o: reserve.cc strings.h
 
 enlarge.o: enlarge.cc strings.h
 	g++ -c enlarge.cc
+
+newstorage.o: newstorage.cc strings.h
+	g++ -c newstorage.cc
 
 strings4.o: strings4.cc strings.h
 	g++ -c strings4.cc

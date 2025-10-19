@@ -7,6 +7,5 @@ void Strings::destroy()
     
     operator delete[](d_str);
     d_str = nullptr;
-    d_size = 0;
     d_capacity = 0;
 }

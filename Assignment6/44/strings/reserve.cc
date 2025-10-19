@@ -6,6 +6,7 @@ void Strings::reserve(size_t newCapacity)
         return;
     
     string **newBlock = rawPointers(newCapacity);
+    // copy old pointers to new block
     for (size_t idx = 0; idx < d_size; ++idx)
         newBlock[idx] = d_str[idx];
 

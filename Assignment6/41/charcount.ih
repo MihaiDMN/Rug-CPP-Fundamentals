@@ -1,7 +1,2 @@
-#ifndef INCLUDED_CHARCOUNT_IH_
-#define INCLUDED_CHARCOUNT_IH_
-
 #include "charcount.h"
 #include <iostream>
-
-#endif
