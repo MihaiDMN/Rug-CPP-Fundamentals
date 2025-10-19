@@ -1,11 +1,6 @@
-#include "charcount.h"
+#include "charcount.ih"
 
-void CharCount::append(size_t idx, unsigned char character)
+void CharCount::append(size_t /*idx*/, unsigned char character)
 {
-    if (d_info.nCharUni == d_capacity)
-        enlarge();
-    
-    d_info.ptr[d_info.nCharUni].ch = character;
-    d_info.ptr[d_info.nCharUni].count = 1;
-    ++d_info.nCharUni;
+    addChar(d_info.nCharUni, character, false);
 }

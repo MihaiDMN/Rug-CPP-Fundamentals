@@ -1,42 +1,32 @@
-main: main.o charcount.o showchar.o clocate.o cinfo.o ccount.o capacity.o enlarge.o insert.o rawcapacity.o append.o increment.o
-	g++ -o main main.o charcount.o showchar.o clocate.o cinfo.o ccount.o capacity.o enlarge.o insert.o rawcapacity.o append.o increment.o
+# Compiler and flags
+CXX = g++
+CXXFLAGS = -std=c++20 -Wall -Wextra -O2
 
-main.o: main.cc charcount.h
-	g++ -c main.cc
+# Source files
+SRCS = append.cc actionforidx.cc capacity.cc charcount.cc sactions.cc charcountdestructor.cc \
+       ccount.cc clocate.cc enlarge.cc increment.cc insert.cc cinfo.cc rawcapacity.cc addchar.cc showchar.cc main.cc
 
-showchar.o: showchar.cc charcount.h
-	g++ -c showchar.cc
+# Object files
+OBJS = $(SRCS:.cc=.o)
 
-charcount.o: charcount.cc charcount.h
-	g++ -c charcount.cc
+# Executable
+TARGET = main
 
-ccount.o: ccount.cc charcount.h
-	g++ -c ccount.cc
+# Default rule: build executable
+all: $(TARGET)
 
-cinfo.o: cinfo.cc charcount.h
-	g++ -c cinfo.cc
+# Link objects into executable
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
-clocate.o: clocate.cc charcount.h
-	g++ -c clocate.cc
+# Compile .cc files into .o
+%.o: %.cc charcount.h charcount.ih
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-capacity.o: capacity.cc charcount.h
-	g++ -c capacity.cc
-
-enlarge.o: enlarge.cc charcount.h
-	g++ -c enlarge.cc
-
-insert.o: insert.cc charcount.h
-	g++ -c insert.cc
-
-rawcapacity.o: rawcapacity.cc charcount.h
-	g++ -c rawcapacity.cc
-
-append.o: append.cc charcount.h
-	g++ -c append.cc
-
-increment.o: increment.cc charcount.h
-	g++ -c increment.cc
-
+# Clean up
 clean:
-	rm -f *.o main
+	rm -f $(OBJS) $(TARGET)
+
+# Phony targets
+.PHONY: all clean
 

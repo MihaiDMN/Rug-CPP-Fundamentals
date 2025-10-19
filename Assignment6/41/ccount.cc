@@ -1,4 +1,4 @@
-#include "charcount.h"
+#include "charcount.ih"
 
 using namespace std;
 size_t CharCount::count(istream &in)
@@ -8,8 +8,8 @@ size_t CharCount::count(istream &in)
     while (in.get(character))
     {
         size_t idx = 0;
-        Action act = locate(static_cast<unsigned char>(character), idx);
-        (this->*d_actions[act])(idx, static_cast<unsigned char>(character));
+        Action act = actionForIndex(static_cast<unsigned char>(character), idx);
+        (this->*s_actions[act])(idx, static_cast<unsigned char>(character));
         ++total;
     }
     return total;

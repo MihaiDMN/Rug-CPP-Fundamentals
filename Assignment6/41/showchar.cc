@@ -1,5 +1,4 @@
-#include "charcount.h"
-#include <iostream>
+#include "charcount.ih"
 #include <cctype>
 
 using namespace std;

@@ -1,7 +1,7 @@
 #ifndef INCLUDED_CHARCOUNT_H
 #define INCLUDED_CHARCOUNT_H
 
-#include <iostream>
+#include <istream>
 
 class CharCount
 {
@@ -14,7 +14,7 @@ class CharCount
         
         struct CharInfo
         {
-            Char *ptr;
+            Char *ptr; // pointer to dynamically allocated array of Char structures
             size_t nCharUni; // number of unique chars
         };
         
@@ -27,17 +27,19 @@ class CharCount
         size_t capacity() const; // report current capacity
 
     private:
-        CharInfo d_info; 
         size_t d_capacity;
-
-        void(CharCount::*d_actions[3])(size_t, unsigned char);        
+        CharInfo d_info; 
+        static void(CharCount::*const s_actions[3])(size_t, unsigned char);   
+        
         Char *rawCapacity(size_t cap);
         void enlarge();
-        Action locate(unsigned char character, size_t &index); // find or insert char
+        size_t locate(unsigned char character) const; // find or insert char
+        Action actionForIndex(unsigned char character, size_t &idx) const;
+        void addChar(size_t idx, unsigned char character, bool shift);
         void append(size_t idx, unsigned char character);
         void insert(size_t idx, unsigned char character);
         void increment(size_t idx, unsigned char character);
 };
 
-void showChar(unsigned char c);
+void showChar(unsigned char character);
 #endif

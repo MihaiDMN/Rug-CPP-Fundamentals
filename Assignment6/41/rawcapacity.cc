@@ -1,4 +1,4 @@
-#include "charcount.h"
+#include "charcount.ih"
 
 CharCount::Char *CharCount::rawCapacity(size_t cap)
 {

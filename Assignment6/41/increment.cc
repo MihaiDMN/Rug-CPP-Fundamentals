@@ -1,4 +1,4 @@
-#include "charcount.h"
+#include "charcount.ih"
 
 void CharCount::increment(size_t idx, unsigned char character)
 {
