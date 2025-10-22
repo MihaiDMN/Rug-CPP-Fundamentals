@@ -1,0 +1,1 @@
+This exercise asks me to add a copy and move constructors and assignments to the double pointer implementation of the class Strings along with the swap member function.

@@ -1,0 +1,10 @@
+This exercise asks me to create a class Numbers that holds a fixed number of ints and allow the number of stored ints to be set at construction.
+This class needs to have a default constructor, copy constructor and assignment, move constructor and assignment and a destructor.
+The output of main.cc is:
+$ ./main
+n3: 10 10 10 10 10
+n4: 10 10 10 10 10
+n5: 10 10 10 10 10
+n2 (uninitialized): 0 0 0 0 0
+When running with valgrind we can observe the output:
+Use of uninitialised value of size 8.
