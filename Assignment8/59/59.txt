@@ -1,0 +1,11 @@
+This exercise asks me to extend the Strings class so that it can either copy or move its elements when enlarging memory. The main purpose is to compare the speed difference between copying and moving string objects.
+
+time ./strings_test 1000
+real    0m0.009s
+user    0m0.009s
+sys     0m0.000s
+
+time ./strings_test 1000 move
+real    0m0.003s
+user    0m0.002s
+sys     0m0.000s

@@ -1,0 +1,1 @@
+This exercise asks me to demonstrate copy elision by creating a class Demo which allows us to observe whether copy elision occurs when returning objects.
