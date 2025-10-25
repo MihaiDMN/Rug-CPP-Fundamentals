@@ -2,5 +2,5 @@
 
 void Data::destroyDouble()
 {
-    
+    delete u_double;
 }

@@ -1,6 +1,6 @@
 #include "../data.ih"
 
-void Data::destroyDouble()
+void Data::destroyValue()
 {
     
 }
