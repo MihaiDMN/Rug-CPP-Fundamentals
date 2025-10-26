@@ -1,4 +1,4 @@
-#include "fch.h"
+#include "fch.ih"
 
 Fch::Fch(char const *fname)
 {

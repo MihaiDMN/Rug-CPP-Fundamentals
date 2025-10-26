@@ -1,5 +1,4 @@
 #include "lock.h"
-#include <unistd.h>
 
 Lock::~Lock()
 {

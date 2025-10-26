@@ -2,6 +2,11 @@
 #define INLCUDED_LOCK_H_
 
 #include <string>
+#include <filesystem>
+#include <sys/file.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <iostream>
 
 class Lock
 {

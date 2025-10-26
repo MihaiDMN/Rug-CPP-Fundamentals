@@ -1,7 +1,6 @@
-#include "fch.h"
-#include <iostream>
+#include "fch.ih"
 
 void Fch::insertLine() const
 {
-    std::cout << d_line << "\n";
+    cout << d_line << "\n";
 }

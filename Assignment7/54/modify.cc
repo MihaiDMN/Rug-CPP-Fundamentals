@@ -1,4 +1,4 @@
-#include "fch.h"
+#include "fch.ih"
 
 void Fch::modify(size_t pos)
 {

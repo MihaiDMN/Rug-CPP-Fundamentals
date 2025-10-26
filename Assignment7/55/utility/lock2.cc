@@ -1,9 +1,4 @@
 #include "lock.h"
-#include <filesystem>
-#include <sys/file.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <iostream>
 
 using namespace std;
 

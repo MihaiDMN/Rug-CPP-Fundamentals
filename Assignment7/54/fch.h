@@ -35,6 +35,8 @@ class Fch
         void searchReplace();
         void showModification(size_t pos) const;
         void insertLine() const;
+        void processLine();
+        void handleAction(size_t &pos);
 };
 
 #endif

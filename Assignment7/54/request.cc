@@ -1,7 +1,5 @@
-#include "fch.h"
-#include <iostream>
+#include "fch.ih"
 
-using namespace std;
 char Fch::request() const
 {
     char answer;

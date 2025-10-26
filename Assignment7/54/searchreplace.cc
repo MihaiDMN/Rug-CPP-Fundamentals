@@ -1,7 +1,5 @@
-#include "fch.h"
-#include <iostream>
+#include "fch.ih"
 
-using namespace std;
 void Fch::searchReplace()
 {
     cerr << "Target text: ";

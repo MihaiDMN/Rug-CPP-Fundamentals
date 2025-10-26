@@ -1,7 +1,5 @@
-#include "fch.h"
-#include <iostream>
+#include "fch.ih"
 
-using namespace std;
 void Fch::showModification(size_t pos) const
 {
     cerr << d_line << "\n";

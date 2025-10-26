@@ -1,4 +1,4 @@
-#include "fch.h"
+#include "fch.ih"
 
 bool Fch::requestedN(char answer) const
 {
